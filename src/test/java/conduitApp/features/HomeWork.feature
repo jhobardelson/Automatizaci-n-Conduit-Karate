@@ -145,7 +145,6 @@ Scenario: Comment articles
     # Step 5: Get the count of the comments array lentgh and save to variable
     * def responseWithComments = response.comments
     * def commentsCount = responseWithComments.length
-    * print commentsCount
 
     # Step 6: Make a POST request to publish a new comment
     Given path 'articles/' + slugID + '/comments'
@@ -153,6 +152,7 @@ Scenario: Comment articles
     And request requestBodyNewComment
     When method Post
     Then status 200
+    * print response
 
     # Step 7: Verify response schema that should contain posted comment text
     And match response.comment == 
@@ -181,8 +181,10 @@ Scenario: Comment articles
 
     # Step 9: Verify number of comments increased by 1 (similar like we did with favorite counts)
     * def responseWithComments = response.comments
-    * def commentsCount = responseWithComments.length
-    * print commentsCount
+    * def commentsCountIncreased = responseWithComments.length
+    And match commentsCountIncreased == commentsCount + 1
+
+  
 
     # Step 10: Make a DELETE request to delete comment
     * print IdComment
@@ -197,7 +199,9 @@ Scenario: Comment articles
     When method Get
     Then status 200
     * def responseWithComments = response.comments
-    * def commentsCount = responseWithComments.length
+    * def commentsCountDecremented = responseWithComments.length
+
+    And match commentsCountDecremented == commentsCountIncreased - 1
 
     
 
