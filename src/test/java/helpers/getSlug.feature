@@ -11,5 +11,4 @@ Scenario: Get Slug
     And header Authorization = 'Token ' + token
     When method Get
     Then status 200
-    * print response.articles[0]
     * def slugID = response.articles[0].slug

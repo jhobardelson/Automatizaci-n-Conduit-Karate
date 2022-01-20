@@ -30,7 +30,6 @@ Scenario: Favorite articles
     And header Authorization = 'Token ' + token
     When method Get
     Then status 200
-    * print response.articles[0]
 
     # Step 2: Get the favorites count and slug ID for the first arice, save it to variables
     * print slugID
@@ -41,7 +40,6 @@ Scenario: Favorite articles
     And header Authorization = 'Token ' + token
     When method Post
     Then status 200
-    * print response
     
     # Step 4: Verify response schema
     And match response.article ==  
@@ -79,7 +77,6 @@ Scenario: Favorite articles
     And header Authorization = 'Token ' + token
     When method Get 
     Then status 200
-    * print response
 
     # Step 7: Verify response schema
     And match each response.articles ==  
@@ -111,10 +108,6 @@ Scenario: Favorite articles
       And header Authorization = 'Token ' + token
       When method Delete
       Then status 200
-      * print response
-
-
-
 
 
 
@@ -131,8 +124,6 @@ Scenario: Comment articles
     And header Authorization = 'Token ' + token
     When method Get
     Then status 200
-    * print response
-
 
     # Step 4: Verify response schema
     And match each response.comments == 
@@ -162,7 +153,6 @@ Scenario: Comment articles
     And request requestBodyNewComment
     When method Post
     Then status 200
-    * print response
 
     # Step 7: Verify response schema that should contain posted comment text
     And match response.comment == 
@@ -186,7 +176,6 @@ Scenario: Comment articles
     And header Authorization = 'Token ' + token
     When method Get
     Then status 200
-    * print response
     * def IdComment = response.comments[0].id
     
 
@@ -209,7 +198,6 @@ Scenario: Comment articles
     Then status 200
     * def responseWithComments = response.comments
     * def commentsCount = responseWithComments.length
-    * print commentsCount
 
     
 
