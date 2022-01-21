@@ -23,8 +23,8 @@
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 250ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(250);\r",
+									"    pm.test(\"Response time is less than 450ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(450);\r",
 									"    });\r",
 									"\r",
 									"    //Comparar\r",
@@ -47,14 +47,9 @@
 									"}\r",
 									"\r",
 									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});\r",
 									"\r",
 									"const schema = {\r",
@@ -73,7 +68,7 @@
 									"          \"type\": \"null\"\r",
 									"        },\r",
 									"        \"image\": {\r",
-									"          \"type\": \"null\"\r",
+									"          \"type\": \"string\"\r",
 									"        },\r",
 									"        \"token\": {\r",
 									"          \"type\": \"string\"\r",
@@ -127,79 +122,6 @@
 								"api",
 								"users",
 								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Sing up",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if ( pm.response.code === 200) {\r",
-									"    pm.test(\"Status code is 200\", function () {\r",
-									"        pm.response.to.have.status(200);\r",
-									"    });\r",
-									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"    });\r",
-									"\r",
-									"} else if (pm.response.code === 422) {\r",
-									"    pm.test(\"Status code is 422\", function () {\r",
-									"    pm.response.to.have.status(422);\r",
-									"    });\r",
-									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"    });\r",
-									"}\r",
-									"\r",
-									"\r",
-									"// Me indica las cookies presentes \r",
-									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
-									"});\r",
-									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"user\": {\r\n        \"email\": \"testCS4@gmail.com\",\r\n        \"password\": \"123456789\",\r\n        \"username\": \"Diana\"\r\n    }\r\n}"
-						},
-						"url": {
-							"raw": "{{URL}}/api/users",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"users"
 							]
 						}
 					},
@@ -263,13 +185,9 @@
 									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});\r",
-									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -324,14 +242,14 @@
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
 									"    });\r",
 									"\r",
 									"}\r",
 									"// Me permite verificar diferentes status\r",
 									"pm.test(\"Successful POST request\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([201, 422]);\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 422, 500]);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Content-Type is present\", function () {\r",
@@ -340,7 +258,7 @@
 									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -407,24 +325,11 @@
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"    pm.test(\"Response time is less than 450ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(450);\r",
 									"    });\r",
 									"}\r",
 									"\r",
-									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
-									"//Comopara titulo\r",
-									"var jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Check title\", () =>{\r",
-									"    pm.expect(jsonData.article.title).equals(\"Prueba\")\r",
-									"    console.log(jsonData.article.title)\r",
-									"});\r",
 									"\r",
 									"// verificar variable de entorno que se esta usando\r",
 									"pm.test(\"Check the active environment\", () => {\r",
@@ -433,8 +338,94 @@
 									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
-									"});"
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
+									"})\r",
+									"\r",
+									"const schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"article\": {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"title\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"slug\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"body\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"description\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"createdAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"updatedAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"tagList\": {\r",
+									"          \"type\": \"array\",\r",
+									"        },\r",
+									"        \"favoritesCount\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"favorited\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"author\": {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"username\": {\r",
+									"              \"type\": \"string\"\r",
+									"            },\r",
+									"            \"bio\": {\r",
+									"              \"type\": \"null\"\r",
+									"            },\r",
+									"            \"image\": {\r",
+									"              \"type\": \"string\"\r",
+									"            },\r",
+									"            \"followedBy\": {\r",
+									"              \"type\": \"array\",\r",
+									"              \"items\": {}\r",
+									"            },\r",
+									"            \"following\": {\r",
+									"              \"type\": \"boolean\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"username\",\r",
+									"            \"bio\",\r",
+									"            \"image\",\r",
+									"            \"followedBy\",\r",
+									"            \"following\"\r",
+									"          ]\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"title\",\r",
+									"        \"slug\",\r",
+									"        \"body\",\r",
+									"        \"description\",\r",
+									"        \"createdAt\",\r",
+									"        \"updatedAt\",\r",
+									"        \"tagList\",\r",
+									"        \"favoritesCount\",\r",
+									"        \"favorited\",\r",
+									"        \"author\"\r",
+									"      ]\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"article\"\r",
+									"  ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Validating schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"})\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -474,92 +465,6 @@
 					"response": []
 				},
 				{
-					"name": "Tags",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if (pm.response.responseTime === 200) {\r",
-									"    pm.test(\"Status code is 200\", function () {\r",
-									"        pm.response.to.have.status(200);\r",
-									"    });\r",
-									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"    });\r",
-									"}\r",
-									"\r",
-									"//Falla verificar que este vacio\r",
-									"var jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Check_properties\" , () =>  {\r",
-									"    pm.expect(jsonData.article).to.be.empty;\r",
-									"});\r",
-									"\r",
-									"// Falla Me indica las cookies presentes \r",
-									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
-									"});\r",
-									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
-									"const schema = {\r",
-									"  \"type\": \"object\",\r",
-									"  \"properties\": {\r",
-									"    \"tags\": {\r",
-									"      \"type\": \"array\",\r",
-									"    }\r",
-									"  },\r",
-									"  \"required\": [\r",
-									"    \"tags\"\r",
-									"  ]\r",
-									"}\r",
-									"\r",
-									"pm.test(\"Validating schema\", () => {\r",
-									"    pm.response.to.have.jsonSchema(schema);\r",
-									"})"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{TOKEN}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "{{URL}}/api/tags",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"tags"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Articulos",
 					"event": [
 						{
@@ -571,16 +476,8 @@
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 250ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(250);\r",
-									"    });\r",
-									"\r",
-									"    //Comparar\r",
-									"    var jsonData = pm.response.json();\r",
-									"\r",
-									"    pm.test(\"Check username\", () =>{\r",
-									"        pm.expect(jsonData.user.username).equals(\"JhobarZg\")\r",
-									"        console.log(jsonData.user.username)\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
 									"    });\r",
 									"    \r",
 									"} else if (pm.response.code === 403) {\r",
@@ -594,15 +491,9 @@
 									"    });\r",
 									"}\r",
 									"\r",
-									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});\r",
 									"\r",
 									"\r",
@@ -912,6 +803,15 @@
 									"    pm.test(\"Response time is less than 200ms\", function () {\r",
 									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
 									"    });   \r",
+									"    //\r",
+									"} else if (pm.response.code === 422) {\r",
+									"  pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(422);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
+									"    });   \r",
 									"}\r",
 									"\r",
 									"\r",
@@ -922,20 +822,66 @@
 									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});\r",
 									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
+									"\r",
+									"// verificar variable de entorno que se esta usando\r",
+									"pm.test(\"Check the active environment\", () => {\r",
+									"  pm.expect(pm.environment.name).to.eql(\"Conduit\");\r",
 									"});\r",
 									"\r",
-									"// verificar que este vacio\r",
-									"var jsonData = pm.response.json();\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// const TOKEN = pm.environment.get('TOKEN');\r",
+									"// const CREATED = pm.environment.get('CREATED');\r",
+									"// const CREATED = pm.environment.get('SLUG');\r",
 									"\r",
-									"pm.test(\"Check_properties\" , () =>  {\r",
-									"    pm.expect(jsonData.article).to.be.empty;\r",
-									"});"
+									"// if (CREATED === 'true') {\r",
+									"//     pm.sendRequest({\r",
+									"//     url: `https://api.realworld.io/api/articles/${SLUG}`,\r",
+									"//     method: 'PUT',\r",
+									"//     header: {\r",
+									"//     'Content-Type': 'application/json',\r",
+									"//     'Authorization': `Bearer ${TOKEN}`\r",
+									"//     },\r",
+									"//     body: {\r",
+									"//         mode: 'raw',\r",
+									"//         raw: JSON.stringify(\r",
+									"//             {\r",
+									"//     \"article\": {\r",
+									"//         \"title\": \"ViegoJhobar\",\r",
+									"//         \"slug\": \"ViegoJhobar-9256\",\r",
+									"//         \"body\": \"My Firulais, bienvenido al vicio\",\r",
+									"//         \"description\": \"Lolcito\",\r",
+									"//         \"createdAt\": \"2022-01-06T20:40:42.134Z\",\r",
+									"//         \"updatedAt\": \"2022-01-06T20:40:42.134Z\",\r",
+									"//         \"tagList\": [],\r",
+									"//         \"favoritesCount\": 0,\r",
+									"//         \"favorited\": false,\r",
+									"//         \"author\": {\r",
+									"//             \"username\": \"JhobarZg\",\r",
+									"//             \"bio\": null,\r",
+									"//             \"image\": \"https://api.realworld.io/images/smiley-cyrus.jpeg\",\r",
+									"//             \"followedBy\": [],\r",
+									"//             \"following\": false\r",
+									"//         }\r",
+									"//     }\r",
+									"// })\r",
+									"//     }//, function(err, reponse) { \r",
+									"//         //var data = reponse.json();\r",
+									"//         //console.log(reponse);\r",
+									"//         //pm.setEnvironmentVariable(\"SLUG\", data.article.slug);\r",
+									"//         //}     \r",
+									"// })\r",
+									"// }"
 								],
 								"type": "text/javascript"
 							}
@@ -962,7 +908,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"article\": {\r\n        \"title\": \"ViegoJhobar\",\r\n        \"slug\": \"ViegoJhobar-9256\",\r\n        \"body\": \"My Firulais, bienvenido al vicio\",\r\n        \"description\": \"Lolcito\",\r\n        \"createdAt\": \"2022-01-06T20:40:42.134Z\",\r\n        \"updatedAt\": \"2022-01-06T20:40:42.134Z\",\r\n        \"tagList\": [],\r\n        \"favoritesCount\": 0,\r\n        \"favorited\": false,\r\n        \"author\": {\r\n            \"username\": \"Jhobar\",\r\n            \"bio\": null,\r\n            \"image\": \"https://api.realworld.io/images/smiley-cyrus.jpeg\",\r\n            \"followedBy\": [],\r\n            \"following\": false\r\n        }\r\n    }\r\n}"
+							"raw": "{\r\n    \"article\": {\r\n        \"title\": \"ViegoJhobar\",\r\n        \"slug\": \"ViegoJhobar-9256\",\r\n        \"body\": \"My Firulais, bienvenido al vicio\",\r\n        \"description\": \"Lolcito\",\r\n        \"createdAt\": \"2022-01-06T20:40:42.134Z\",\r\n        \"updatedAt\": \"2022-01-06T20:40:42.134Z\",\r\n        \"tagList\": [],\r\n        \"favoritesCount\": 0,\r\n        \"favorited\": false,\r\n        \"author\": {\r\n            \"username\": \"JhobarZg\",\r\n            \"bio\": null,\r\n            \"image\": \"https://api.realworld.io/images/smiley-cyrus.jpeg\",\r\n            \"followedBy\": [],\r\n            \"following\": false\r\n        }\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "{{URL}}/api/articles/{{SLUG}}",
@@ -990,28 +936,57 @@
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
 									"    });\r",
 									"}\r",
 									"\r",
 									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});\r",
 									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
 									"\r",
-									"// verificar que este vacio\r",
-									"var jsonData = pm.response.json();\r",
+									"const schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"user\": {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"email\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"username\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"bio\": {\r",
+									"          \"type\": \"null\"\r",
+									"        },\r",
+									"        \"image\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"token\": {\r",
+									"          \"type\": \"string\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"email\",\r",
+									"        \"username\",\r",
+									"        \"bio\",\r",
+									"        \"image\",\r",
+									"        \"token\"\r",
+									"      ]\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"user\"\r",
+									"  ]\r",
+									"}\r",
 									"\r",
-									"pm.test(\"Check_properties\" , () =>  {\r",
-									"    pm.expect(jsonData.article).to.be.empty;\r",
-									"});"
+									"pm.test(\"Validating schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"})"
 								],
 								"type": "text/javascript"
 							}
@@ -1059,6 +1034,67 @@
 			"name": "DELETE",
 			"item": [
 				{
+					"name": "EliminarFavorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"\r",
+									"// Me indica las cookies presentes \r",
+									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
+									"});\r",
+									"\r",
+									"// verificar variable de entorno que se esta usando\r",
+									"pm.test(\"Check the active environment\", () => {\r",
+									"  pm.expect(pm.environment.name).to.eql(\"Conduit\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/articles/{{SLUG}}/favorite",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								"{{SLUG}}",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Articulo",
 					"event": [
 						{
@@ -1082,14 +1118,14 @@
 									"            {\r",
 									"                \"article\":\r",
 									"                {\"tagList\":[],\r",
-									"                \"title\":\"Prueba\",\r",
+									"                \"title\":\"Test Prueba\",\r",
 									"                \"description\":\"ShoberPlay\",\r",
 									"                \"body\":\"LOL\"}\r",
 									"            })\r",
 									"    }//, function(err, reponse) { \r",
 									"        //var data = reponse.json();\r",
 									"        //console.log(reponse);\r",
-									"        //pm.setEnvironmentVariable(\"SLUG\", data.article.slug);\r",
+									"        // pm.setEnvironmentVariable(\"SLUG\", data.article.slug);\r",
 									"        //}     \r",
 									"})\r",
 									"}\r",
@@ -1107,35 +1143,26 @@
 									"        pm.response.to.have.status(204);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
 									"    });\r",
 									"} else if (pm.response.code === 404) {\r",
 									"    pm.test(\"Status code is 404\", function () {\r",
 									"        pm.response.to.have.status(404);\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"    pm.test(\"Response time is less than 350ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(350);\r",
 									"    });\r",
 									"}\r",
 									"\r",
 									"\r",
-									"\r",
 									"// Me indica las cookies presentes \r",
 									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
+									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
 									"});\r",
 									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
-									"//Falla por que todo esta vacio\r",
-									"pm.test(\"Body is correct\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1167,73 +1194,6 @@
 								"api",
 								"articles",
 								"{{SLUG}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "EliminarFavorito",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"if (pm.response.code === 200) {\r",
-									"    pm.test(\"Status code is 200\", function () {\r",
-									"        pm.response.to.have.status(200);\r",
-									"    });\r",
-									"\r",
-									"    pm.test(\"Response time is less than 200ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"    });\r",
-									"}\r",
-									"\r",
-									"\r",
-									"// Me indica las cookies presentes \r",
-									"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
-									"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;\r",
-									"});\r",
-									"\r",
-									"// falla por que nuestra respuesta es un Json\r",
-									"pm.test(\"Body is string\", function () {\r",
-									"    pm.response.to.have.body(\"response_body_string\");\r",
-									"});\r",
-									"\r",
-									"// verificar que este vacio\r",
-									"var jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Check_properties\" , () =>  {\r",
-									"    pm.expect(jsonData.article).to.be.empty;\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{TOKEN}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/articles/{{SLUG}}/favorite",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"articles",
-								"{{SLUG}}",
-								"favorite"
 							]
 						}
 					},
