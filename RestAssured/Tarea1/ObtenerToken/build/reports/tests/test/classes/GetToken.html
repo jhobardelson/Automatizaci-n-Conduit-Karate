@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class GetToken</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class GetToken</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; GetToken</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">7.279s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getArticles</td>
+<td class="success">7.279s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Request method:	POST
+Request URI:	https://api.realworld.io/api/users/login
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;user&quot;: {
+        &quot;email&quot;: &quot;testCS@gmail.com&quot;,
+        &quot;password&quot;: &quot;123456789&quot;
+    }
+}
+HTTP/1.1 200 OK
+Date: Tue, 25 Jan 2022 13:07:45 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/&quot;210-P55vCqAwcngZgCvv1rwpLnnqFSQ&quot;
+via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=zRQPZ6%2FWTlrrz3V%2FAiiBJjxysnCMCbkNFWKExnQr1ZQCoHXZ38OUKfv3%2B25FRdZDD9vbTO4r6Z2NH9Qoyu4aKg8MrT1F5DAUvz5o9r25SmE3NuzlQyTgtQzzR49JwqyJ63BZ&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 6d31b9ed8d13098e-MIA
+Content-Encoding: gzip
+alt-svc: h3=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+
+{
+    &quot;user&quot;: {
+        &quot;email&quot;: &quot;testCS@gmail.com&quot;,
+        &quot;username&quot;: &quot;JhobarZg&quot;,
+        &quot;bio&quot;: null,
+        &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+        &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RDU0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Ikpob2JhclpnIiwicGFzc3dvcmQiOiIkMmEkMTAkcHdYeDkuWnBvZVQ3M0pVUm55VHNLZThyTmpVQy5jLmJOWXltOG9wWjk3dEF1TUFPZC5LLkMiLCJiaW8iOm51bGwsImltYWdlIjoiaHR0cHM6Ly9hcGkucmVhbHdvcmxkLmlvL2ltYWdlcy9zbWlsZXktY3lydXMuanBlZyIsImlhdCI6MTY0MzExNjA2NSwiZXhwIjoxNjQ4MzAwMDY1fQ.hQeEOgvfRVWm7umTbbs7Yi_09Ddep8twaHPlSdVChVw&quot;
+    }
+}
+Request method:	GET
+Request URI:	https://api.realworld.io/api/articles?limit=10&amp;offset=0
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+HTTP/1.1 200 OK
+Date: Tue, 25 Jan 2022 13:07:47 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/&quot;f2d-qbU/S/A68Or1W0IdyJP073NGWI8&quot;
+via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=gHyrkCvmXZhoHB%2FPn4vZUTSht6gc2MjVDnixBQfr5HfhoBZe9%2F5LYSJ%2FwtosqdOUTquvJYCvpiNNm%2Fx4LUXqWFf3%2FqUOFgA0F4kb0pp8tc9S60mIL2lYo50SAaCLopY8E6sl&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+Server: cloudflare
+CF-RAY: 6d31b9fc49d467d5-MIA
+Content-Encoding: gzip
+alt-svc: h3=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400
+
+{
+    &quot;articles&quot;: [
+        {
+            &quot;slug&quot;: &quot;Prueba12-9256&quot;,
+            &quot;title&quot;: &quot;Prueba12&quot;,
+            &quot;description&quot;: &quot;ShoberPlay&quot;,
+            &quot;body&quot;: &quot;LOL&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-21T00:08:25.204Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-21T00:08:25.204Z&quot;,
+            &quot;tagList&quot;: [
+                
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 0,
+            &quot;favorited&quot;: false
+        },
+        {
+            &quot;slug&quot;: &quot;Prueba-9256&quot;,
+            &quot;title&quot;: &quot;Prueba&quot;,
+            &quot;description&quot;: &quot;ShoberPlay&quot;,
+            &quot;body&quot;: &quot;LOL&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-20T21:12:28.784Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-20T21:12:28.784Z&quot;,
+            &quot;tagList&quot;: [
+                
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 0,
+            &quot;favorited&quot;: false
+        },
+        {
+            &quot;slug&quot;: &quot;ViegoJhobar-9256&quot;,
+            &quot;title&quot;: &quot;ViegoJhobar&quot;,
+            &quot;description&quot;: &quot;Lolcito&quot;,
+            &quot;body&quot;: &quot;My Firulais, bienvenido al vicio&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-20T21:12:26.554Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-20T21:12:28.254Z&quot;,
+            &quot;tagList&quot;: [
+                
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 1,
+            &quot;favorited&quot;: true
+        },
+        {
+            &quot;slug&quot;: &quot;Gwayne-Hightower-9256&quot;,
+            &quot;title&quot;: &quot;Gwayne Hightower&quot;,
+            &quot;description&quot;: &quot;New Ghis&quot;,
+            &quot;body&quot;: &quot;Fear cuts deeper than swords.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-17T13:42:46.796Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-17T13:42:46.796Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 1,
+            &quot;favorited&quot;: true
+        },
+        {
+            &quot;slug&quot;: &quot;Andros-Brax-9256&quot;,
+            &quot;title&quot;: &quot;Andros Brax&quot;,
+            &quot;description&quot;: &quot;Elyria&quot;,
+            &quot;body&quot;: &quot;Things are not always as they seemed, much that may seem evil can be good.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-17T13:38:35.169Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-17T13:38:35.169Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 0,
+            &quot;favorited&quot;: false
+        },
+        {
+            &quot;slug&quot;: &quot;Allaquo-9256&quot;,
+            &quot;title&quot;: &quot;Allaquo&quot;,
+            &quot;description&quot;: &quot;Norvos&quot;,
+            &quot;body&quot;: &quot;And I have a tender spot in my heart for cripples and bastards and broken things.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-17T13:34:37.215Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-17T13:34:37.215Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 1,
+            &quot;favorited&quot;: true
+        },
+        {
+            &quot;slug&quot;: &quot;Zia-Frey-9256&quot;,
+            &quot;title&quot;: &quot;Zia Frey&quot;,
+            &quot;description&quot;: &quot;Hi Men&quot;,
+            &quot;body&quot;: &quot;Things are not always as they seemed, much that may seem evil can be good.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-14T22:35:54.905Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-14T22:35:54.905Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 1,
+            &quot;favorited&quot;: true
+        },
+        {
+            &quot;slug&quot;: &quot;Palla-9256&quot;,
+            &quot;title&quot;: &quot;Palla&quot;,
+            &quot;description&quot;: &quot;Hi Men&quot;,
+            &quot;body&quot;: &quot;Fear cuts deeper than swords.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-14T22:35:28.016Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-14T22:35:28.016Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 1,
+            &quot;favorited&quot;: true
+        },
+        {
+            &quot;slug&quot;: &quot;Argrave-the-Defiant-9256&quot;,
+            &quot;title&quot;: &quot;Argrave the Defiant&quot;,
+            &quot;description&quot;: &quot;Hi Men&quot;,
+            &quot;body&quot;: &quot;The things I do for love.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-14T22:34:36.214Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-14T22:34:36.214Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 0,
+            &quot;favorited&quot;: false
+        },
+        {
+            &quot;slug&quot;: &quot;Aegon-II-Targaryen-9256&quot;,
+            &quot;title&quot;: &quot;Aegon II Targaryen&quot;,
+            &quot;description&quot;: &quot;Hi Men&quot;,
+            &quot;body&quot;: &quot;A lion doesn't concern itself with the opinion of sheep.&quot;,
+            &quot;createdAt&quot;: &quot;2022-01-14T22:34:35.186Z&quot;,
+            &quot;updatedAt&quot;: &quot;2022-01-14T22:34:35.186Z&quot;,
+            &quot;tagList&quot;: [
+                &quot;nuevo articulo&quot;
+            ],
+            &quot;author&quot;: {
+                &quot;username&quot;: &quot;JhobarZg&quot;,
+                &quot;bio&quot;: null,
+                &quot;image&quot;: &quot;https://api.realworld.io/images/smiley-cyrus.jpeg&quot;,
+                &quot;following&quot;: false
+            },
+            &quot;favoritesCount&quot;: 0,
+            &quot;favorited&quot;: false
+        }
+    ],
+    &quot;articlesCount&quot;: 17
+}
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.1</a> at 25/01/2022 08:07:49 AM</p>
+</div>
+</div>
+</body>
+</html>

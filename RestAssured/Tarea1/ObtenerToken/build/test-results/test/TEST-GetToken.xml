@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GetToken" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-25T13:07:41" hostname="QV-2655" time="7.279">
+  <properties/>
+  <testcase name="getArticles" classname="GetToken" time="7.279"/>
+  <system-out><![CDATA[Request method:	POST
+Request URI:	https://api.realworld.io/api/users/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "user": {
+        "email": "testCS@gmail.com",
+        "password": "123456789"
+    }
+}
+HTTP/1.1 200 OK
+Date: Tue, 25 Jan 2022 13:07:45 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"210-P55vCqAwcngZgCvv1rwpLnnqFSQ"
+via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=zRQPZ6%2FWTlrrz3V%2FAiiBJjxysnCMCbkNFWKExnQr1ZQCoHXZ38OUKfv3%2B25FRdZDD9vbTO4r6Z2NH9Qoyu4aKg8MrT1F5DAUvz5o9r25SmE3NuzlQyTgtQzzR49JwqyJ63BZ"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6d31b9ed8d13098e-MIA
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+    "user": {
+        "email": "testCS@gmail.com",
+        "username": "JhobarZg",
+        "bio": null,
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RDU0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Ikpob2JhclpnIiwicGFzc3dvcmQiOiIkMmEkMTAkcHdYeDkuWnBvZVQ3M0pVUm55VHNLZThyTmpVQy5jLmJOWXltOG9wWjk3dEF1TUFPZC5LLkMiLCJiaW8iOm51bGwsImltYWdlIjoiaHR0cHM6Ly9hcGkucmVhbHdvcmxkLmlvL2ltYWdlcy9zbWlsZXktY3lydXMuanBlZyIsImlhdCI6MTY0MzExNjA2NSwiZXhwIjoxNjQ4MzAwMDY1fQ.hQeEOgvfRVWm7umTbbs7Yi_09Ddep8twaHPlSdVChVw"
+    }
+}
+Request method:	GET
+Request URI:	https://api.realworld.io/api/articles?limit=10&offset=0
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Tue, 25 Jan 2022 13:07:47 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"f2d-qbU/S/A68Or1W0IdyJP073NGWI8"
+via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=gHyrkCvmXZhoHB%2FPn4vZUTSht6gc2MjVDnixBQfr5HfhoBZe9%2F5LYSJ%2FwtosqdOUTquvJYCvpiNNm%2Fx4LUXqWFf3%2FqUOFgA0F4kb0pp8tc9S60mIL2lYo50SAaCLopY8E6sl"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6d31b9fc49d467d5-MIA
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+    "articles": [
+        {
+            "slug": "Prueba12-9256",
+            "title": "Prueba12",
+            "description": "ShoberPlay",
+            "body": "LOL",
+            "createdAt": "2022-01-21T00:08:25.204Z",
+            "updatedAt": "2022-01-21T00:08:25.204Z",
+            "tagList": [
+                
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 0,
+            "favorited": false
+        },
+        {
+            "slug": "Prueba-9256",
+            "title": "Prueba",
+            "description": "ShoberPlay",
+            "body": "LOL",
+            "createdAt": "2022-01-20T21:12:28.784Z",
+            "updatedAt": "2022-01-20T21:12:28.784Z",
+            "tagList": [
+                
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 0,
+            "favorited": false
+        },
+        {
+            "slug": "ViegoJhobar-9256",
+            "title": "ViegoJhobar",
+            "description": "Lolcito",
+            "body": "My Firulais, bienvenido al vicio",
+            "createdAt": "2022-01-20T21:12:26.554Z",
+            "updatedAt": "2022-01-20T21:12:28.254Z",
+            "tagList": [
+                
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 1,
+            "favorited": true
+        },
+        {
+            "slug": "Gwayne-Hightower-9256",
+            "title": "Gwayne Hightower",
+            "description": "New Ghis",
+            "body": "Fear cuts deeper than swords.",
+            "createdAt": "2022-01-17T13:42:46.796Z",
+            "updatedAt": "2022-01-17T13:42:46.796Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 1,
+            "favorited": true
+        },
+        {
+            "slug": "Andros-Brax-9256",
+            "title": "Andros Brax",
+            "description": "Elyria",
+            "body": "Things are not always as they seemed, much that may seem evil can be good.",
+            "createdAt": "2022-01-17T13:38:35.169Z",
+            "updatedAt": "2022-01-17T13:38:35.169Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 0,
+            "favorited": false
+        },
+        {
+            "slug": "Allaquo-9256",
+            "title": "Allaquo",
+            "description": "Norvos",
+            "body": "And I have a tender spot in my heart for cripples and bastards and broken things.",
+            "createdAt": "2022-01-17T13:34:37.215Z",
+            "updatedAt": "2022-01-17T13:34:37.215Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 1,
+            "favorited": true
+        },
+        {
+            "slug": "Zia-Frey-9256",
+            "title": "Zia Frey",
+            "description": "Hi Men",
+            "body": "Things are not always as they seemed, much that may seem evil can be good.",
+            "createdAt": "2022-01-14T22:35:54.905Z",
+            "updatedAt": "2022-01-14T22:35:54.905Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 1,
+            "favorited": true
+        },
+        {
+            "slug": "Palla-9256",
+            "title": "Palla",
+            "description": "Hi Men",
+            "body": "Fear cuts deeper than swords.",
+            "createdAt": "2022-01-14T22:35:28.016Z",
+            "updatedAt": "2022-01-14T22:35:28.016Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 1,
+            "favorited": true
+        },
+        {
+            "slug": "Argrave-the-Defiant-9256",
+            "title": "Argrave the Defiant",
+            "description": "Hi Men",
+            "body": "The things I do for love.",
+            "createdAt": "2022-01-14T22:34:36.214Z",
+            "updatedAt": "2022-01-14T22:34:36.214Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 0,
+            "favorited": false
+        },
+        {
+            "slug": "Aegon-II-Targaryen-9256",
+            "title": "Aegon II Targaryen",
+            "description": "Hi Men",
+            "body": "A lion doesn't concern itself with the opinion of sheep.",
+            "createdAt": "2022-01-14T22:34:35.186Z",
+            "updatedAt": "2022-01-14T22:34:35.186Z",
+            "tagList": [
+                "nuevo articulo"
+            ],
+            "author": {
+                "username": "JhobarZg",
+                "bio": null,
+                "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+                "following": false
+            },
+            "favoritesCount": 0,
+            "favorited": false
+        }
+    ],
+    "articlesCount": 17
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
